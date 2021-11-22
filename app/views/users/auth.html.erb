@@ -1,0 +1,59 @@
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+  <input type="text" id="login" placeholder="Login">
+  <br>
+  <input type="password" id="password" placeholder="Password">
+  <br>
+  <button  style="width: 100px; height: 50px" onclick="makeRequest()">Enter</button>
+  <br><br>
+
+
+<tbody>
+<% @users.each do |user| %>
+  <tr>
+    <td><b><%= user.login %></b></td><br>
+    <td><%= user.password %></td><br>
+    <td><%= user.fullname %></td><br>
+    <td><%= user.role %></td><br><br>
+  </tr>
+<% end %>
+</tbody>
+
+<script>
+    function makeRequest() {
+        var user_login = document.getElementById('login').value;
+        var user_password = document.getElementById('password').value;
+
+        //alert(user_login);
+        //alert(user_password);
+
+        //let users = %= @users %>;
+        /*users.forEach(user => {
+            if (user.login == user_login && user.password == user_password) {
+                alert("Успех! Поздравляю, "+ user_login + "! ");
+            }
+            else
+            {
+                alert("Ошибка!!!");
+            }
+        } );*/
+
+        $.ajax('http://localhost:3000/users', {
+            success: function (data){
+                alert("Данные считаны из БД!");
+                alert("Login: " + user_login);
+                alert("Password: " + user_password);
+                data.forEach(user => {
+                    alert(user.id);
+                   //user.login == user_login && user.password == user_password
+                } )
+            }
+        });
+    }
+
+</script>
+

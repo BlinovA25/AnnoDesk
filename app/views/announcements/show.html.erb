@@ -1,0 +1,29 @@
+<%= render 'layouts/header' %>
+<br>
+
+<p id="notice"><%= notice %></p>
+
+<!--
+<strong>Picture:</strong>
+  <br>
+<br>
+  <%= @announcement.picture %>
+
+
+-->
+<div>
+  <img style="width: 400px;" src="<%= @announcement.picture %>"/>
+</div>
+
+<p>
+  <strong>Text:</strong>
+  <%= @announcement.text %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @announcement.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_announcement_path(@announcement) %>
+<%= link_to 'Back', announcements_path %>
