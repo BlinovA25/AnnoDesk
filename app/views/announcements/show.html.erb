@@ -21,8 +21,14 @@
 
 <p>
   <strong>Author:</strong>
-  <% @announcement.user_id %>
+  <% @users.each do |u| %>
+    <% if(u.id == @announcement.user_id) %>
+      <%= u.login %>
+    <% end %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_announcement_path(@announcement) %>
 <%= link_to 'Back', announcements_path %>
+
+

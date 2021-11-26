@@ -4,10 +4,12 @@ class AnnouncementsController < ApplicationController
   # GET /announcements or /announcements.json
   def index
     @announcements = Announcement.all
+    @users = User.all
   end
 
   # GET /announcements/1 or /announcements/1.json
   def show
+    @users = User.all
   end
 
   # GET /announcements/new
