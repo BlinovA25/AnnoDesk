@@ -1,3 +1,19 @@
+
+<script>
+  var lat;
+  var lng;
+    function findFunc() {
+        alert("We are searching for you!")
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                lat = position.coords.latitude;
+                lng = position.coords.longitude;
+                alert(lat +" " + lng);
+                document.getElementById("user_latitude").value = lat;
+                document.getElementById("user_longitude").value = lng; })
+    }
+</script>
+
 <%= form_with(model: user) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -58,7 +74,7 @@
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.text_field :password %>
+    <%= form.text_field :password, placeholder: "Leave blank if unchanged" %>
   </div>
 
   <div class="field">
@@ -71,9 +87,25 @@
     <%= form.text_field :role %>
   </div>
 
+  <div id="lat" class="field" aria-placeholder="latitude" style="visibility: visible">
+    <%= form.text_field :latitude %>
+  </div>
+
+  <div id="lng" class="field" aria-placeholder="longitude" style="visibility: visible">
+    <%= form.text_field :longitude %>
+  </div>
+
+  <!--button onclick="findFunc()"> Find me! </button-->
+
+  <h2  onclick="findFunc()"> Find me! </h2>
+  <br>
+
   <div class="actions">
     <%= form.submit %>
   </div>
+
+
+
 <% end %>
 
 

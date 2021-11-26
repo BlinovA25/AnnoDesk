@@ -2,56 +2,35 @@
 <br>
 
 <p id="notice"><%= notice %></p>
+<br>
 
 <h1>Users</h1>
 
-<!--
-<th>Birthday</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Country</th>
-      <th>Zip</th>
-      <th>Password</th>
-      <th>Confirm password</th>
-
-      <th>Latitude</th>
-      <th>Longitude</th>
-
--->
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Login</th>
       <th>Fullname</th>
       <th>Role</th>
+      <th>Email</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
-  <!--
-  <td>%= user.birthday %></td>
-        <td>%= user.email %></td>
-        <td>%= user.address %></td>
-        <td>%= user.city %></td>
-        <td>%= user.state %></td>
-        <td>%= user.country %></td>
-        <td>%= user.zip %></td>
-        <td>%= user.password %></td>
-        <td>%= user.confirm_password %></td>
-        <td>%= user.latitude %></td>
-        <td>%= user.longitude %></td>
-  -->
+
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.id %></td>
         <td><%= user.login %></td>
         <td><%= user.fullname %></td>
         <td><%= user.role %></td>
+        <th><%= user.email %></th>
+
 
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <!--td>%= link_to 'Edit', edit_user_path(user) %></td-->
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -60,4 +39,7 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<!--%= link_to 'New User', new_user_path %-->
+
+
+

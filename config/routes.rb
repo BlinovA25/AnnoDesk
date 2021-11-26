@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root "announcements#index"
+  #scope '/admin' do
+  #  resources :users
+  #end
 
-  get 'auth', to: 'users#auth'
+  root "announcements#index"
   get 'index', to: 'announcements#index'
-  # get 'sign_in', to:'users'
 
   resources :comments
   resources :announcements

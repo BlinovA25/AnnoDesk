@@ -8,9 +8,8 @@
   <br>
 <br>
   <%= @announcement.picture %>
-
-
 -->
+
 <div>
   <img style="width: 400px;" src="<%= @announcement.picture %>"/>
 </div>
@@ -22,7 +21,7 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @announcement.user_id %>
+  <% @announcement.user_id %>
 </p>
 
 <%= link_to 'Edit', edit_announcement_path(@announcement) %>

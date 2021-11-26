@@ -10,24 +10,32 @@
       </ul>
     </div>
   <% end %>
+  <br><br>
 
   <div class="field">
     <%= form.label :text %>
     <%= form.text_field :text %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <!--div class="field">
+    <%= form.label :user %>
+    <%= form.text_field :user %>
+  </div-->
 
   <div class="field">
     <%= form.label :picture %>
     <%= form.text_field :picture %>
-
   </div>
+
+
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<script>
+
+
+</script>
