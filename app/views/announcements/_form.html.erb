@@ -17,15 +17,19 @@
   </div>
 
   <%= form.hidden_field :user_id, value: current_user.id %>
-  <!--div class="field">
-    <%= form.label :user %>
-    <%= form.text_field :user %>
-  </div-->
 
   <div class="field">
     <%= form.label :picture %>
-    <%= form.text_field :picture %>
+    <%= form.file_field :picture %>
   </div>
+
+  <!--
+  u = Annoucement.new
+  File.open('somewhere') do |f|
+  u.picture = f
+  end
+  u.save!
+  -->
 
 
 

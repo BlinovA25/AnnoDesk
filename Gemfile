@@ -6,6 +6,7 @@ ruby '2.7.4'
 
 gem 'rouge'
 gem 'devise'
+gem 'carrierwave', '~> 2.0'
 
 gem 'google_maps_service'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

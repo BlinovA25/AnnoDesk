@@ -11,8 +11,7 @@
     <tr>
       <th>Picture</th>
       <th>Text</th>
-      <th>Author_ID</th>
-      <th>Author_Name</th>
+      <th>Author</th>
 
       <th colspan="4"></th>
     </tr>
@@ -25,7 +24,7 @@
           <img style="width: 150px;" src="<%= announcement.picture %>"/>
         </td>
         <td><%= announcement.text %></td>
-        <td><%= announcement.user_id %></td>
+
         <td>
           <% @users.each do |u| %>
             <% if(u.id == announcement.user_id) %>

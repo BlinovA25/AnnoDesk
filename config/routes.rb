@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   root "announcements#index"
   get 'index', to: 'announcements#index'
 
+  resources :announcements do
+    resources :comments
+  end
+
   resources :comments
-  resources :announcements
   resources :users
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -10,6 +10,13 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/1 or /announcements/1.json
   def show
     @users = User.all
+
+    @comments = Comment.all
+
+    #@announcement = current_announcement
+
+    #render json: @comments
+    # дай джейсон пожалумста
   end
 
   # GET /announcements/new
@@ -19,6 +26,7 @@ class AnnouncementsController < ApplicationController
 
   # GET /announcements/1/edit
   def edit
+
   end
 
   # POST /announcements or /announcements.json

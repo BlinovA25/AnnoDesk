@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Text</th>
       <th>User</th>
       <th>Announcement</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
+        <td><%= comment.id %></td>
         <td><%= comment.text %></td>
         <td><%= comment.user_id %></td>
         <td><%= comment.announcement_id %></td>
