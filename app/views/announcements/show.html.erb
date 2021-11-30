@@ -1,40 +1,7 @@
 
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 
-<script>
-    function deleteComment(id)
-    {
-        $.ajax({
-            url: 'http://localhost:3000/comments/'+ id,
-            method: 'delete',
-            dataType: 'json' }
-        )
-        alert("Comment with ID = "+ id +" was sucsessfully deleted!");
-    }
 
-    function onPClick()
-    {
-        //alert("You clicked on P teg.");
-        //setTimeout(showComments, 1000);
-    }
-
-    function showComments() {
-        //alert("Show comments!")
-        $("#comments").empty();
-
-        $.ajax('http://localhost:3000/comments.json', {
-            success: function (data){
-                data.forEach(comment => {
-                    const li = document.createElement('li');
-                    li.textContent = "ID - " + comment.id + "; Author - "+comment.user_id+"; Text - "+comment.text;
-                    document.querySelector('#comments').append(li);
-                } )
-            }
-        });
-    }
-
-    showComments();
-</script>
 
 <%= render 'layouts/header' %>
 <br>
@@ -80,7 +47,9 @@
       <!--button style="margin-left: 5px;" id="DeleteComment" onclick="deleteComment('<-%= comment.id %>')">Delete comment</button-->
       <p>
         <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%= link_to 'Edit', edit_comment_path(comment) %>
+
+        <!--a onclick="updateComment()">Edit</a-->
+        <!--%= link_to 'Edit', edit_comment_path(comment) %-->
       </p>
 
     </div>
@@ -89,7 +58,6 @@
 
 </div>
 
-<br>
 <p>Here you can add your comment:</p>
 <%= render 'comments/form' %>
 
@@ -97,7 +65,6 @@
 
 
 <!--%= link_to 'Back', announcements_path %-->
-
 
 
 
